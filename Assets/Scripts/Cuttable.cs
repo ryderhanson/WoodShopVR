@@ -7,6 +7,8 @@ public class Cuttable : MonoBehaviour
 {
     IBzSliceableAsync _sliceableAsync;
 
+    private const float _breakSpeed = 0.1f;
+
     void Start()
     {
         _sliceableAsync = GetComponentInParent<IBzSliceableAsync>();
@@ -23,7 +25,7 @@ public class Cuttable : MonoBehaviour
         if (knife == null)
             return;
 
-        if(knife.IsSwinging)
+        if(knife.MoveVelocity < _breakSpeed)
         {
             return;
         }

@@ -19,10 +19,11 @@ public class CuttingTool : MonoBehaviour
         _prevPos = _pos;
         _pos = transform.position;
 
-        if(IsSwinging && MoveVelocity < 0.00001f)
+        if (IsSwinging && MoveVelocity < 0.00001f)
         {
             IsSwinging = false;
         }
+        
     }
 
     public Vector3 Origin
